@@ -4,7 +4,7 @@
     <h2>Update Record</h2>
 
     <?php 
-        $conn = mysqli_connect("localhost", "root", "mysql","crud")or die("Connection Failed");
+        include'config.php';
 
         $stu_id = $_GET['id'];
         $sql = "SELECT * FROM student WHERE sid={$stu_id}";

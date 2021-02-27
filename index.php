@@ -3,15 +3,13 @@
     web developer
     facebook.com/raihan.mahmudi.50
  -->
-
-
 <?php
 include 'header.php';
 ?>
 <div id="main-content">
     <h2>All Records</h2>
     <?php 
-        $conn = mysqli_connect("localhost", "root", "mysql","crud")or die("Connection Failed");
+        include'config.php';
         $sql = "SELECT * FROM student JOIN studentclass WHERE student.sclass =studentclass.cid";
         $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
         if(mysqli_num_rows($result) > 0){
@@ -40,7 +38,7 @@ include 'header.php';
                 <td><?php echo $row['sphone'] ?></td>
                 <td>
                     <a href='edit.php?id=<?php echo $row['sid']; ?>'>Edit</a>
-                    <a href='delete-inline.php'>Delete</a>
+                    <a href='delete-inline.php?id=<?php echo $row['sid']; ?>'>Delete</a>
                 </td>
             </tr>
            <?php } ?>

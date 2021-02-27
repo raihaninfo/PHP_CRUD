@@ -7,7 +7,7 @@
  $stu_phone = $_POST['sphone'];
 
  
-$conn = mysqli_connect("localhost", "root", "mysql","crud")or die("Connection Failed");
+ include'config.php';
 $sql = "UPDATE student SET sname = '$stu_name', saddress= '$stu_address', sclass= '$stu_class', sphone= '$stu_phone' WHERE sid = {$stu_id}";
 $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
