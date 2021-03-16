@@ -27,8 +27,7 @@ include 'header.php';
         <tbody>
         <?php 
             while($row =mysqli_fetch_assoc($result)){
-
-            
+  
         ?>
             <tr>
                 <td><?php echo $row['sid'] ?></td>
